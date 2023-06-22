@@ -1,0 +1,9 @@
+.env
+.env.example
+logs
+plugins
+files
+data
+dags
+config
+docker-compose.yml

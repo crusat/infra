@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  dataset_postgres:
+    platform: linux/amd64
+    restart: always
+    env_file: .env
+    image: postgres:13-alpine
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    networks:
+      - default
+      - airflow_default
+      - superset_default
+
+  adminer:
+    platform: linux/amd64
+    image: adminer
+    env_file: .env
+    restart: always
+    ports:
+      - "8044:8080"
+    networks:
+      - default
+      - airflow_default
+      - superset_default
+
+networks:
+  airflow_default:
+    name: airflow_default
+    external: true
+  superset_default:
+    name: superset_default
+    external: true
