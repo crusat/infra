@@ -29,6 +29,16 @@ down:
 	docker-compose -f ./airflow/docker-compose.yml down
 	docker-compose -f ./superset/docker-compose.yml down
 
+logs:
+	docker-compose -f ./dataset_postgres/docker-compose.yml logs --tail 100
+	docker-compose -f ./airflow/docker-compose.yml logs --tail 100
+	docker-compose -f ./superset/docker-compose.yml logs --tail 100
+
+ps:
+	docker-compose -f ./dataset_postgres/docker-compose.yml ps
+	docker-compose -f ./airflow/docker-compose.yml ps
+	docker-compose -f ./superset/docker-compose.yml ps
+
 destroy:
 	make down
 	rm -f ./airflow/.env

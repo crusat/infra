@@ -7,6 +7,7 @@ _Источник: [https://ru.wikipedia.org/wiki/Apache_Airflow](https://ru.wik
 
 * Класс системы: ETL
 * Документация: [https://airflow.apache.org/docs/](https://airflow.apache.org/docs/)
+* Best practices: [https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html](https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html)
 
 ### Apache Superset
 
@@ -63,6 +64,16 @@ Superset - прочитать и вывести. Есть много други�
  
 make init
 make up
+# Для первого запуска подождите значительное время,
+# может потребоваться 5-10 минут.
+#
+# Ориентироваться можно по командам:
+# make ps
+# make logs
+# чтобы понимать, что superset_init закончил работу.
+#
+# Если этого не произошло, то сделайте make destroy
+# и заново make init и make up.
 ```
 
 ### Поднять и остановить сервисы
@@ -110,3 +121,7 @@ make destroy
 * [http://localhost:8044](http://localhost:8044) 
 * Логин: admin
 * Пароль: admin
+
+## Прочее
+
+Пример XML файла был взят отсюда: [https://www.w3schools.com/xml/cd_catalog.xml](https://www.w3schools.com/xml/cd_catalog.xml)
