@@ -1,2 +1,5 @@
 .idea
 
+# Удалите строки ниже, если планируете использовать для себя
+/superset_airflow_postgres/airflow/dags/*
+!/superset_airflow_postgres/airflow/dags/dag_cd_catalog_to_database.py
